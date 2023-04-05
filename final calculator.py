@@ -5,7 +5,7 @@ from tkinter import ttk
 
 
 def display():
-    pass
+    number_clicked.set('1')
 # tkinter._test()
 root = Tk()
 root.title('Calculator App')
@@ -23,7 +23,7 @@ threeButton = ttk.Button(content,text='3')
 threeButton.grid(column=4,row=2)
 
 number_clicked = StringVar()
-ttk.Label(content,textvariable=number_clicked)
+ttk.Label(content,textvariable=number_clicked).grid(row=1,column=3)
 
 
 
