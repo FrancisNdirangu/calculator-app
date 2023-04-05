@@ -26,10 +26,10 @@ number_clicked = StringVar()
 ttk.Label(content,textvariable=number_clicked).grid(row=1,column=3)
 
 
-# currently i have to make the button that is clicked display the text of the button
-#what we can do is change the way we display the text on the buttons
-#the question is finding out how to know which button has been clicked.
-#one way we can do this is by making a function for each number that is pressed
+#the next thing we can do is to create an addition button and an equals button
+#what can happen is numbers keep getting added into an array then when we press the equals button
+#the numbers get added up.
+#find a way of programming pemdas into code.
 
 
 root.mainloop()
