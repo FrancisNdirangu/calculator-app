@@ -4,8 +4,8 @@ from tkinter import *
 from tkinter import ttk
 
 
-def display():
-    number_clicked.set('1')
+def displaybutton(buttonpressed):
+    number_clicked.set(buttonpressed)
 # tkinter._test()
 root = Tk()
 root.title('Calculator App')
@@ -15,18 +15,21 @@ content.grid(column=0,row=0)
 calculator = ttk.Label(content,text='Calculator',padding=(10,10,10,10))
 calculator.grid(column=3,row=0)
 
-oneButton = ttk.Button(content,text='1',command=display)
+oneButton = ttk.Button(content,text='1',command=lambda buttonpressed = '1': displaybutton(buttonpressed))
 oneButton.grid(column =2, row=2)
-twoButton = ttk.Button(content,text='2')
+twoButton = ttk.Button(content,text='2',command=lambda buttonpressed= '2':displaybutton(buttonpressed))
 twoButton.grid(column=3,row=2)
-threeButton = ttk.Button(content,text='3')
+threeButton = ttk.Button(content,text='3',command=lambda buttonpressed='3': displaybutton(buttonpressed))
 threeButton.grid(column=4,row=2)
 
 number_clicked = StringVar()
 ttk.Label(content,textvariable=number_clicked).grid(row=1,column=3)
 
 
-
+# currently i have to make the button that is clicked display the text of the button
+#what we can do is change the way we display the text on the buttons
+#the question is finding out how to know which button has been clicked.
+#one way we can do this is by making a function for each number that is pressed
 
 
 root.mainloop()
