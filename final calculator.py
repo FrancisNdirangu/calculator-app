@@ -2,24 +2,43 @@
 
 from tkinter import *
 from tkinter import ttk
-
+import numpy
 
 def displaybutton(buttonpressed):
     number_clicked.set(buttonpressed)
 # tkinter._test()
 
-def addition(buttonpressed):
+def calculate(buttonpressed):
     #what i need is to get the button pressed and add it to an array
     #i should do this for every button pressed
     #the addition will then be done after the equals button is pressed
-    addition_array = []
-    addition_array = addition_array.append(buttonpressed)
+    global number_array
+    number_array = []
+    number_array = number_array.append(buttonpressed)
+    
     #the algorithm would be this
     #you press a button. that button gets saved in an array
     #you then press the plus button
     #you then press the second button
     #then you press the equals sign
     #the summation is then done
+
+def equals():
+    i=0
+    for i in numpy.size(number_array):
+        i+=2
+        print(number_array[i-2]+number_array[i])
+#the main thing i must remember about this calculator is that i will be doing one operation per step
+#this means that i must either do the operation then save the final number
+#if i was to do this with addition then the algorithm would be such
+#add the number to an array
+#press the add button, this will add the + sign into the array
+#press the second number, which will add it to the array
+#then we will press the equals button
+#the equals button will take the contents of the array located at the even contents of the array
+#turn them into integers
+#then compare what the sign is inbetween them
+#if the sign is a plus the function will add the two integers and display that answer on the screen
 
 root = Tk()
 root.title('Calculator App')
@@ -39,14 +58,15 @@ threeButton.grid(column=4,row=2)
 number_clicked = StringVar()
 ttk.Label(content,textvariable=number_clicked).grid(row=1,column=3)
 
-
+equals_sign = ttk.Button(content,text='=',command=equals())
+equals_sign.grid(column=5,row=3 )
 #the next thing we can do is to create an addition button and an equals button
 #what can happen is numbers keep getting added into an array then when we press the equals button
 #the numbers get added up.
 #find a way of programming pemdas into code.
 
 #i will now add the addition button
-addbutton = ttk.Button(content, text='+',command = lambda buttonpressed = '+':displaybutton(buttonpressed))
+addbutton = ttk.Button(content, text='+',command = calculate(buttonpressed))
 addbutton.grid(column=5,row=2)
 
 root.mainloop()
