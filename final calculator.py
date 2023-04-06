@@ -7,6 +7,20 @@ from tkinter import ttk
 def displaybutton(buttonpressed):
     number_clicked.set(buttonpressed)
 # tkinter._test()
+
+def addition(buttonpressed):
+    #what i need is to get the button pressed and add it to an array
+    #i should do this for every button pressed
+    #the addition will then be done after the equals button is pressed
+    addition_array = []
+    addition_array = addition_array.append(buttonpressed)
+    #the algorithm would be this
+    #you press a button. that button gets saved in an array
+    #you then press the plus button
+    #you then press the second button
+    #then you press the equals sign
+    #the summation is then done
+
 root = Tk()
 root.title('Calculator App')
 
@@ -31,6 +45,9 @@ ttk.Label(content,textvariable=number_clicked).grid(row=1,column=3)
 #the numbers get added up.
 #find a way of programming pemdas into code.
 
+#i will now add the addition button
+addbutton = ttk.Button(content, text='+',command = lambda buttonpressed = '+':displaybutton(buttonpressed))
+addbutton.grid(column=5,row=2)
 
 root.mainloop()
 #the frame widget will be for holding the contents on the user interface
