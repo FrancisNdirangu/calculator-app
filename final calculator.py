@@ -14,7 +14,8 @@ def calculate(buttonpressed):
     #the addition will then be done after the equals button is pressed
     global number_array
     number_array = []
-    number_array = number_array.append(buttonpressed)
+    number_array = number_array.append(number_clicked)
+    print(number_array)
     
     #the algorithm would be this
     #you press a button. that button gets saved in an array
@@ -24,12 +25,9 @@ def calculate(buttonpressed):
     #the summation is then done
 
 def equals():
-    global number_array
-    number_array = []
-    i=0
-    for i in range(numpy.size(number_array)):
-        i+=2
-        print(number_array[i-2]+number_array[i])
+    pass
+#currently focusing on fixing the addition before the equals is added
+
 #the main thing i must remember about this calculator is that i will be doing one operation per step
 #this means that i must either do the operation then save the final number
 #if i was to do this with addition then the algorithm would be such
