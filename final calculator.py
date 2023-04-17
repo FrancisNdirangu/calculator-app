@@ -4,28 +4,25 @@ from tkinter import *
 from tkinter import ttk
 import numpy
 
+number_array = ['haha']
+
 def displaybutton(buttonpressed):
     number_clicked.set(buttonpressed)
+    
+    number_array.append(buttonpressed)
+    print(number_array)
+    # print('the sum of the array would be:', sum(number_array))
 # tkinter._test()
 
 def calculate(buttonpressed):
-    #what i need is to get the button pressed and add it to an array
-    #i should do this for every button pressed
-    #the addition will then be done after the equals button is pressed
-    global number_array
-    number_array = []
-    number_array = number_array.append(number_clicked)
-    print(number_array)
-    
-    #the algorithm would be this
-    #you press a button. that button gets saved in an array
-    #you then press the plus button
-    #you then press the second button
-    #then you press the equals sign
-    #the summation is then done
+    pass 
+
+
 
 def equals():
+    # print(number_array)
     pass
+    # pass
 #currently focusing on fixing the addition before the equals is added
 
 #the main thing i must remember about this calculator is that i will be doing one operation per step
@@ -60,14 +57,11 @@ ttk.Label(content,textvariable=number_clicked).grid(row=1,column=3)
 
 equals_sign = ttk.Button(content,text='=',command=equals())
 equals_sign.grid(column=5,row=3 )
-#the next thing we can do is to create an addition button and an equals button
-#what can happen is numbers keep getting added into an array then when we press the equals button
-#the numbers get added up.
-#find a way of programming pemdas into code.
 
-#i will now add the addition button
 addbutton = ttk.Button(content, text='+',command = calculate(number_clicked))
 addbutton.grid(column=5,row=2)
+
+
 
 root.mainloop()
 #the frame widget will be for holding the contents on the user interface
@@ -76,10 +70,12 @@ root.mainloop()
 #we need to open a window
 #the window should have the title 'Calculator App'
 #in the window should be ten buttons. each button showing the number it represents.
-#when a button is pressed it should appear on the screen
-#then we should have buttons for add and subtract
-#there should also be an = button for running the computation
-#when we press a number then click on add then press another then the = button
-#the operation between those two numbers should take place
-
-#the = button will have the default setting on so that it can be invoked when the user presses enter
+#I think what we should do is the following
+#everytime we click on a number that number should go into an array
+#when you click on a sign like addition that sign should also go into the array
+#when you click = it should turn the numbers into integers
+#it should remove the quotes from the operation sign then it should evaluate the calculation
+#the calculation can be evaluated by adding the numbers in a loop
+#the previous number should be added to the next
+#then the result is saved into an array
+#then the next number is selected and added into the next number
