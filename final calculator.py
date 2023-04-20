@@ -11,11 +11,23 @@ def displaybutton(buttonpressed):
     
     number_array.append(buttonpressed)
     print(number_array)
-    # print('the sum of the array would be:', sum(number_array))
-# tkinter._test()
 
-def calculate(buttonpressed):
-    pass 
+#the main issue with the code when i press plus the number_array is not printed
+#this is because the final output of one funtion is not saved for use in the next iteration of the next function
+#the value of number_array goes back to the original value that I made it which is ['haha']
+#my problem could be saved by creating a file
+#the file would be where the numbers would be saved
+#i can then access the numbers from this file for computation
+
+#I can also use this file in order to carry out different operations
+#all numbers can be saved onto one file
+#i can call an index number then look at the computation between that number and the next one
+#if the sign is addition then i would then add the two numbers then save the result onto a new file
+#then i would increase the index by an increment and then carry out the computation between the next number and the result number in the other file
+
+
+def plus():
+    print(number_array)
 
 
 
@@ -58,7 +70,7 @@ ttk.Label(content,textvariable=number_clicked).grid(row=1,column=3)
 equals_sign = ttk.Button(content,text='=',command=equals())
 equals_sign.grid(column=5,row=3 )
 
-addbutton = ttk.Button(content, text='+',command = calculate(number_clicked))
+addbutton = ttk.Button(content, text='+',command = plus())
 addbutton.grid(column=5,row=2)
 
 
@@ -79,3 +91,6 @@ root.mainloop()
 #the previous number should be added to the next
 #then the result is saved into an array
 #then the next number is selected and added into the next number
+
+
+#i have a completely new idea for how to save output for the next iteration
